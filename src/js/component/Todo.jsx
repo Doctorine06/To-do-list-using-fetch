@@ -3,7 +3,7 @@ import Tasks from "./Tasks.jsx";
 import Footer from "./footer.jsx";
 
 const Todo = () => {
-	const [tasks, setTaks] = useState([]);
+	const [tasks, setTask] = useState([]);
 
 	const [Task, setNewTask] = useState(".");
 
@@ -27,7 +27,7 @@ const Todo = () => {
 				if (value === "") {
 					alert("task cant be empty");
 				} else {
-					setTaks([...tasks, Task]);
+					setTask([...tasks, Task]);
 				}
 				setTaskDuplicated(false);
 			}
