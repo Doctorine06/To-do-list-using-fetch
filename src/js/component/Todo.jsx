@@ -10,6 +10,33 @@ const Todo = () => {
 	const [taskDuplicate, setTaskDuplicated] = useState(false);
 
 	const [Duplicated, setDuplicated] = useState("");
+	
+	useEffect(()=>{
+		fetch("https://assets.breathco.de/apis/fake/todos/user/Doctorine06")
+		.then((response)=>{
+			return response.json() ;
+		})
+		.then((data) => {
+			setTask(data) ;
+		});
+	},[]) ;
+
+	useEffect(() => {
+		fetch("https://assets.breathco.de/apis/fake/todos/user/Doctorine06", {
+			method: "PUT",
+			body: JSON.stringify(tasks),
+			headers: {"Content-type": application/json },
+		})
+			.then((response) => {
+				return response.json();
+			})
+			.then((response) => console.log(response))
+			.catch ((error) => {
+				console.log(error)
+			}) ;
+	}, [tasks]) ;
+	
+
 
 	function Change(event) {
 		setNewTask(event.target.value);
