@@ -1,6 +1,6 @@
 import React from "react";
 import Todo from "./Todo.jsx";
-import Task from "./Task.jsx";
+
 import Footer from "./footer.jsx";
 import { useEffect, useState } from "react";
 

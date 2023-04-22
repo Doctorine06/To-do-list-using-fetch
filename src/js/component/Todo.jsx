@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Tasks from "./Tasks.jsx";
+import React, { useState, useEffect } from "react";
+import Tasks from "./Task.jsx";
 import Footer from "./footer.jsx";
 
 const Todo = () => {
@@ -25,7 +25,6 @@ const Todo = () => {
 		fetch("https://assets.breathco.de/apis/fake/todos/user/Doctorine06", {
 			method: "PUT",
 			body: JSON.stringify(tasks),
-			headers: {"Content-type": application/json },
 		})
 			.then((response) => {
 				return response.json();
@@ -64,7 +63,7 @@ const Todo = () => {
 	}
 
 	function removeTask(taskToRemove) {
-		setTaks(tasks.filter(task => task !== taskToRemove));
+		setTask(tasks.filter(task => task !== taskToRemove));
 	}
 
 	return (
